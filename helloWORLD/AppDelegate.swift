@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  helloworld2
+//  helloWORLD
 //
 //  Created by Kelly Linehan on 9/4/14.
 //  Copyright (c) 2014 Kelly Linehan. All rights reserved.
