@@ -10,48 +10,67 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
                             
     @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var minutes: UITextField!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var calories: UILabel!
+    @IBOutlet weak var actionControl: UISegmentedControl!
+    
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func updateRCalories(){
+        let kilograms = (weight.text as NSString).floatValue/2.2
+        let time = (minutes.text as NSString).floatValue/60
+        let rMet = 10.floatValue
+        let Rproduct = kilograms*rMet
+        let Rtotal = (time*Rproduct)
+        var total = NSNumberFormatter()
+        calories.text=total.stringFromNumber(Rtotal)
+
     }
     func updateWCalories(){
         let kilograms = (weight.text as NSString).floatValue/2.2
         let time = (minutes.text as NSString).floatValue/60
         let wMet = 2.floatValue
         let Wproduct = kilograms*wMet
-        let Wtotal = time * Wproduct}
-    func updateRCalories(){
-        let kilograms = (weight.text as NSString).floatValue/2.2
-        let time = (minutes.text as NSString).floatValue/60
-        let rMet = 10.floatValue
-        let Rproduct = kilograms*rMet
-        let Rtotal = time * Rproduct
-        
+        let Wtotal = (time*Wproduct)
+        var total = NSNumberFormatter()
+        calories.text=total.stringFromNumber(Wtotal)
     }
-        
-        
-    @IBAction func chooseAction(sender: AnyObject) {
-        if sender.tag==1 {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        minutes.resignFirstResponder()
+        weight.resignFirstResponder()
+    }
+    
+    
+    @IBAction func controlAction(sender: UISegmentedControl) {
+        if actionControl.selectedSegmentIndex==0{
+            questionImage.image=UIImage(named: "walk.jpeg")
+        }
+        else if actionControl.selectedSegmentIndex==1{
             questionImage.image=UIImage(named: "run.jpeg")
-            func textFieldDidEndEditing(textField: UITextField!) {
-                updateRCalories()}
-        if sender.tag==2 {
-            questionImage.image=UIImage(named: "walk.jpeg") 
-            func textFieldDidEndEditing(textField: UITextField!) {
-                updateWCalories()}
         }
     }
-        
+
+    func textFieldDidEndEditing(textField: UITextField!) {
+        if actionControl.selectedSegmentIndex==0{
+            updateWCalories()
+        }
+        else {
+            updateRCalories()
+        }
+    }
+    
     override func viewDidLoad() {
-        minutes.delegate
-        weight.delegate
+        minutes.delegate=self
+        weight.delegate=self
         super.viewDidLoad()
+        actionControl.selectedSegmentIndex = -1
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,4 +81,3 @@ class ViewController: UIViewController {
 
 }
 
-}
