@@ -6,7 +6,11 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<string>D8D2C9FA-30DB-4072-8B08-76FD5CCFA70F</string>
+=======
+	<string>F6B73F98-BC21-493F-A4CA-F774A3333754</string>
+>>>>>>> FETCH_HEAD
 =======
 	<string>F6B73F98-BC21-493F-A4CA-F774A3333754</string>
 >>>>>>> FETCH_HEAD
@@ -39,7 +43,11 @@
 			<string>B6D20FAF93163A02E4BF4AB02EB389BA807D1590</string>
 			<key>IDESourceControlWCCName</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<string>KellyMAD</string>
+=======
+			<string>KellyLinehanMAD</string>
+>>>>>>> FETCH_HEAD
 =======
 			<string>KellyLinehanMAD</string>
 >>>>>>> FETCH_HEAD
