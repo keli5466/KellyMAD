@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
   
         if let detail: AnyObject = self.detailItem {
             if let label = self.detailDescriptionLabel {
+                println("true")
                 label.text = detail.description
                 self.loadWebPage(detail.description)
             }
