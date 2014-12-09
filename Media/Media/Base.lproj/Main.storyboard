@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Media" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMQ-o3-CO2">
+                                <rect key="frame" x="0.0" y="548" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="6IP-lW-5w3">
+                                        <connections>
+                                            <action selector="cameraButtonTapped:" destination="vXZ-lx-hvc" id="zPf-Bi-TWR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="A62-jb-5eO"/>
+                                    <barButtonItem systemItem="action" id="xbM-1c-5NF">
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="vXZ-lx-hvc" id="BID-FC-JQo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HXL-5R-e0F">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="548"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JMQ-o3-CO2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="8OY-52-Nyb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JMQ-o3-CO2" secondAttribute="trailing" constant="-16" id="Hzd-rU-d3v"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HXL-5R-e0F" secondAttribute="bottom" constant="44" id="MHk-Kq-pzb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HXL-5R-e0F" secondAttribute="trailing" constant="-16" id="jYx-LO-F8b"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JMQ-o3-CO2" secondAttribute="bottom" constant="8" id="k8X-dz-tSE"/>
+                            <constraint firstItem="JMQ-o3-CO2" firstAttribute="top" secondItem="HXL-5R-e0F" secondAttribute="bottom" id="oau-l0-8Yu"/>
+                            <constraint firstItem="HXL-5R-e0F" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="qSY-I9-B9t"/>
+                            <constraint firstItem="JMQ-o3-CO2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="528" id="uJV-ls-ooO"/>
+                            <constraint firstItem="HXL-5R-e0F" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="w2d-Vq-mmT"/>
+                            <constraint firstItem="HXL-5R-e0F" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="wDP-Bb-JaH"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="HXL-5R-e0F" secondAttribute="bottom" constant="44" id="ySM-VR-VLp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="w2d-Vq-mmT"/>
+                                <exclude reference="ySM-VR-VLp"/>
+                                <exclude reference="uJV-ls-ooO"/>
+                                <exclude reference="MHk-Kq-pzb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="HXL-5R-e0F" id="B0K-xR-hnf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
